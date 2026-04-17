@@ -1,0 +1,256 @@
+
+/*===============================
+vehicle.html css code
+================================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+margin: 0;
+padding: 0;
+width: 100%;
+}
+
+.gallery-header {
+    background-color: #003366;
+    color: #e9eef5;
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #003366;
+    color: white;
+}
+
+.Logo{
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #e9eef5;
+}
+
+nav a{
+    color: white;
+    margin: 0 15px;
+    text-decoration: dotted;
+    font-weight: bold;
+}
+
+.card-container {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--card-bg);
+    background: #e9eef5;
+    border-radius: 11px;
+    box-shadow: 1 10px 20px rgb(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-sizing: 0 15px 30px rgba (0,51,102,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0.15);
+}
+
+.card-img-container {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    object-fit: cover;
+    background: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.card-info {
+    padding: 10px;
+    text-align: left;
+    height: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    color: #003366;
+    margin:  5px 0;
+    margin-bottom: 15px 2;
+}
+
+.card-info p{
+    font-size: 20px;
+    margin: 0;
+}
+
+.price{
+    font-size: 18px;
+    font-weight: bold;
+    color: #303e33;
+    margin: 15px 0;
+}
+
+.btn-inquire {
+    display: block;
+    text-align: center;
+    background: #4577a8;
+    color: white;
+    padding: 9px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+btn-inquire:hover {
+    background: #28a745;
+}
+
+/*pagination styling*/
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
+    padding: 27px 0;
+}
+
+.page-num, .next, .prev {
+    padding: 10px 10px;
+    border: 1px solid #003366;
+    text-decoration: dotted;
+    color: #003366;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.page-num.active{
+    background-color: #43a4e0;
+    color: #eee;
+    border-color:#43a4e0 ;
+}
+
+.prev.disabled {
+    color: #171c1e;
+    border-color: #3aa0a0;
+    pointer-events: none;
+}
+
+.search-container {
+margin-top: 25px;
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+
+#VehicleSearch{
+    width: 61%;
+    max-width: 600px;
+    padding: 12px 20px;
+    border-radius: 8px 0 0;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-container input {
+    padding: 10px 65px;
+    width: 300px;
+
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    
+    color: black;
+    border: noone;
+    border-radius:5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+
+body.dark-mode {
+background-color: #121212;
+color: #ffffff;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark-mode .gallery-header{
+    background-color: #001a33;
+}
+
+body.dark-mode .price{
+    color:#43a4e0 ;
+}
+
+@media screen and (max-width: 768px){
+    #VehicleSearch{
+        width: 85%;
+        max-width: 100%;
+    }
+
+    .card-container{
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .header-content h1{
+        font-size: 1rem;
+    }
+}
+    
