@@ -11,7 +11,7 @@ vehicle.html css code
 body{
 margin: 0;
 padding: 0;
-width: 100%;
+width: auto;
 }
 
 .gallery-header {
@@ -21,15 +21,17 @@ width: 100%;
     padding: 40px 20px;
     margin-bottom: 40px;
     margin-top: 0px;
+    width: 100%;
 }
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px 10%;
     background-color: #003366;
     color: white;
+    box-sizing:border-box ;
 }
 
 .Logo{
@@ -169,8 +171,30 @@ margin-top: 25px;
 display: flex;
 justify-content: center;
 gap: 10px;
+position: -webkit-sticky;
+position: sticky;
+top: 70px;
+z-index: 998;
+background-color: inherit;
+padding: 15px 0;
+width: 100%;
+display: flex;
+justify-content: center;
+transition: all 0.3s ease;
 }
 
+body, .gallery-header{
+    overflow: visible;
+}
+
+@media  screen and (max-width: 768px){
+
+    .search-container{
+        top:60px;
+        padding: 1opx;
+    }
+}
+    
 #VehicleSearch{
     width: 61%;
     max-width: 600px;
@@ -287,4 +311,17 @@ body.dark-mode #dark-mode-toggle {
         font-size: 1rem;
     }
 }
-    
+  
+#dark-mode-toggle {
+    display: flex;
+    visibility: visible;
+    cursor: pointer;
+    padding: o 15px;
+    z-index: 1000;
+}
+
+#dark-mode-toggle i {
+color: #ffffff;
+font-size: 1.5rem;
+}
+
