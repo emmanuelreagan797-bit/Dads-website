@@ -11,7 +11,8 @@ body{
 header{
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 19px 40px;
+    height: auto;
     background: #1e3c72;
     color: #f5f7fa;
     font-weight: bold;
@@ -254,3 +255,28 @@ body.dark-mode input, body.dark-mode textarea {
     color: #ffffff;
     border: 1px solid #0d129d;
 }
+
+
+@media  screen and  (max-width: 768px)
+{
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 9px 15px;
+        width: 100;
+    }
+
+    .nav0links{
+        display: flex;
+        gap: 0;
+    }
+
+    .logo{
+        font-size: 1.2rem;
+        flex-shrink: 0
+    }
+
+
+}    
