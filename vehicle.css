@@ -34,6 +34,18 @@ nav{
     box-sizing:border-box ;
 }
 
+nav-links{
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav-link a{
+    text-wrap: nowrap;
+    font-size: 14px;
+}
+
 .Logo{
     font-size: 32px;
     letter-spacing: 1px;

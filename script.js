@@ -56,3 +56,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    // Check if the menu is open by checking for the active class
+    if (navLinks.classList.contains('active')) {
+        hamburger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+        hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+});
