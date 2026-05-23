@@ -71,3 +71,63 @@ hamburger.addEventListener('click', () => {
         hamburger.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }
 });
+
+// 1. Target the element (Make sure your HTML has class="whatsapp-float")
+const whatsappIcon = document.querySelector('.whatsapp-float');
+
+if (!whatsappIcon) {
+  // This will tell us immediately if JS can't find your icon
+  alert("Error: JavaScript cannot find an element with the class '.whatsapp-float'. Check your HTML!");
+} else {
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  // Unified function to handle down click/touch
+  const startDrag = (e) => {
+    isDragging = true;
+    
+    // Get exact cursor/finger position
+    const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+    const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+    
+    const rect = whatsappIcon.getBoundingClientRect();
+    offsetX = clientX - rect.left;
+    offsetY = clientY - rect.top;
+    
+    // Visual indicator that drag started
+    whatsappIcon.style.opacity = "0.7";
+    whatsappIcon.style.transition = "none"; 
+  };
+
+  // Unified function to handle moving
+  const moveDrag = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    
+    const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+    const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+    
+    // Clear default bottom/right properties so they don't fight the movement
+    whatsappIcon.style.right = 'auto';
+    whatsappIcon.style.bottom = 'auto';
+    
+    // Set new positions
+    whatsappIcon.style.left = (clientX - offsetX) + 'px';
+    whatsappIcon.style.top = (clientY - offsetY) + 'px';
+  };
+
+  const stopDrag = () => {
+    isDragging = false;
+    if(whatsappIcon) whatsappIcon.style.opacity = "1";
+  };
+
+  // PC Mouse Listeners
+  whatsappIcon.addEventListener('mousedown', startDrag);
+  window.addEventListener('mousemove', moveDrag);
+  window.addEventListener('mouseup', stopDrag);
+
+  // Mobile Touch Listeners
+  whatsappIcon.addEventListener('touchstart', startDrag, { passive: false });
+  window.addEventListener('touchmove', moveDrag, { passive: false });
+  window.addEventListener('touchend', stopDrag);
+}

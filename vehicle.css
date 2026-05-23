@@ -238,7 +238,7 @@ body, .gallery-header{
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 18px;
     background-color: #25d366;
     color: white;
     width: 60px;
@@ -250,8 +250,11 @@ body, .gallery-header{
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 9999;
     text-decoration: none;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
 }
 
 
