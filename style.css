@@ -2,12 +2,16 @@ html{
     scroll-behavior: smooth;
 }
 
+* {outline:1p
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
+
 
 main, .content-wrapper {
     overflow-x: hidden;
@@ -223,18 +227,14 @@ gap: 30px;
 .email-btn {
     align-items: center;
     height: auto;
-    gap: 4px;
+    gap: 2px;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
     box-sizing: border-box;
     max-width: 200px;
 }
 
-.email-btn:hover {
-
-}
 
 /*stacks icon ontop text*/
 .method-item {
@@ -336,7 +336,7 @@ body.dark-mode input, body.dark-mode textarea {
     position: absolute;
     top: 70px;
     left: 250px;
-    right: 2.03px;
+    right: 5px;
     background-color: #1e3c72;
     padding: 20px 30px;
     box-shadow: 0 1px 20px rgba(0,0,0,0.1);
