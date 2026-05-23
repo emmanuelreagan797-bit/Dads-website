@@ -220,23 +220,20 @@ gap: 30px;
     margin-top: 30px;
 }
 
-.contact-form{
-width: 350px;
-margin: 20px auto;
-padding: 20px;
-background: white;
-border-radius: 10px;
-overflow: hidden;
+.email-btn {
+    align-items: center;
+    height: auto;
+    gap: 5.8px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    box-sizing: border-box;
+    max-width: 200px;
 }
 
-.contact-form{
-    flex-shrink: 0;
-}
+.email-btn:hover {
 
-.contact-form {
-    width: 90%;
-    min-width: 300px;
-    max-width: 400px;
 }
 
 /*stacks icon ontop text*/
