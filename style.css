@@ -175,13 +175,14 @@ margin-top: 30px;
     font-weight: bold;
     font-size: large;
     max-width: 600px;
-    margin-left: 1x;
+    margin-left: 3px;
 }
 .about-text h2 {
     font-family: 'Cause', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: bold;
+    margin-left: 3px;
 }
 
 .about-image img {
