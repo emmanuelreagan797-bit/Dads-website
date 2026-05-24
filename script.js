@@ -72,62 +72,73 @@ hamburger.addEventListener('click', () => {
     }
 });
 
-// 1. Target the element (Make sure your HTML has class="whatsapp-float")
+
+
 const whatsappIcon = document.querySelector('.whatsapp-float');
 
-if (!whatsappIcon) {
-  // This will tell us immediately if JS can't find your icon
-  alert("Error: JavaScript cannot find an element with the class '.whatsapp-float'. Check your HTML!");
-} else {
+// CRITICAL FIX: Everything only runs IF the icon exists on the current page
+if (whatsappIcon) {
   let isDragging = false;
-  let offsetX, offsetY;
+  let startX, startY;
 
-  // Unified function to handle down click/touch
-  const startDrag = (e) => {
+  const getCoords = (e) => {
+    if (e.type.startsWith('touch')) {
+      return {
+        x: e.touches[0] ? e.touches[0].clientX : e.changedTouches[0].clientX,
+        y: e.touches[0] ? e.touches[0].clientY : e.changedTouches[0].clientY
+      };
+    }
+    return { x: e.clientX, y: e.clientY };
+  };
+
+  const dragStart = (e) => {
     isDragging = true;
     
-    // Get exact cursor/finger position
-    const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
-    const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
-    
+    const coords = getCoords(e);
     const rect = whatsappIcon.getBoundingClientRect();
-    offsetX = clientX - rect.left;
-    offsetY = clientY - rect.top;
+    startX = coords.x - rect.left;
+    startY = coords.y - rect.top;
     
-    // Visual indicator that drag started
-    whatsappIcon.style.opacity = "0.7";
-    whatsappIcon.style.transition = "none"; 
+    whatsappIcon.style.transition = 'none'; 
   };
 
-  // Unified function to handle moving
-  const moveDrag = (e) => {
+  const dragMove = (e) => {
     if (!isDragging) return;
-    e.preventDefault();
+    e.preventDefault(); 
     
-    const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
-    const clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+    const coords = getCoords(e);
+    let newX = coords.x - startX;
+    let newY = coords.y - startY;
     
-    // Clear default bottom/right properties so they don't fight the movement
+    const padding = 15;
+    const iconWidth = whatsappIcon.offsetWidth;
+    const iconHeight = whatsappIcon.offsetHeight;
+    
+    newX = Math.max(padding, Math.min(newX, window.innerWidth - iconWidth - padding));
+    newY = Math.max(padding, Math.min(newY, window.innerHeight - iconHeight - padding));
+    
     whatsappIcon.style.right = 'auto';
     whatsappIcon.style.bottom = 'auto';
-    
-    // Set new positions
-    whatsappIcon.style.left = (clientX - offsetX) + 'px';
-    whatsappIcon.style.top = (clientY - offsetY) + 'px';
+    whatsappIcon.style.left = `${newX}px`;
+    whatsappIcon.style.top = `${newY}px`;
   };
 
-  const stopDrag = () => {
+  const dragEnd = () => {
     isDragging = false;
-    if(whatsappIcon) whatsappIcon.style.opacity = "1";
   };
 
-  // PC Mouse Listeners
-  whatsappIcon.addEventListener('mousedown', startDrag);
-  window.addEventListener('mousemove', moveDrag);
-  window.addEventListener('mouseup', stopDrag);
+  // PC Desktop Listeners
+  whatsappIcon.addEventListener('mousedown', dragStart);
+  window.addEventListener('mousemove', dragMove);
+  window.addEventListener('mouseup', dragEnd);
 
-  // Mobile Touch Listeners
-  whatsappIcon.addEventListener('touchstart', startDrag, { passive: false });
-  window.addEventListener('touchmove', moveDrag, { passive: false });
-  window.addEventListener('touchend', stopDrag);
+  // Mobile Phone Listeners
+  whatsappIcon.addEventListener('touchstart', dragStart, { passive: false });
+  window.addEventListener('touchmove', dragMove, { passive: false });
+  window.addEventListener('touchend', dragEnd);
+  
+  console.log("WhatsApp draggable features loaded successfully on this page!");
+} else {
+  // Safe fallback message for your other pages
+  console.log("No WhatsApp icon found on this page. Draggable script skipped safely.");
 }

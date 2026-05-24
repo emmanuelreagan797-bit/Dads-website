@@ -175,6 +175,7 @@ margin-top: 30px;
     font-weight: bold;
     font-size: large;
     max-width: 600px;
+    margin-left: 1x;
 }
 .about-text h2 {
     font-family: 'Cause', sans-serif;
@@ -235,13 +236,21 @@ gap: 20px;
     flex-direction: column;
     gap: 6px;
     height: auto;
-    margin-left: 50px;
+    margin-right: 10px;
 }
 
+.email-btn :hover{
+    color: #0a1df5;
+}
+
+.fa-envelope{
+    color: #061af3;
+}
+
+/*size of the email icon*/
 .email-btn i {
 font-size: 40px;
 }
-
 
 /*stacks icon ontop text*/
 .method-item {
@@ -300,6 +309,10 @@ body.dark-mode input, body.dark-mode textarea {
     background-color: #352e2e;
     color: #ffffff;
     border: 1px solid #0d129d;
+}
+
+body.dark-mode .email-btn :hover{
+    color: #0d129d;
 }
 
 /* Hamburger button*/
