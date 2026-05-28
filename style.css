@@ -138,11 +138,12 @@ nav a{
 }
 
 .card {
-    background: white;
+    background:rgb(240, 234, 234) ;
     padding: 15px;
     border-radius: 10px;
-    width: 250px; /*fixed width to maintain uniformity */
+    width: 290px; /*fixed width to maintain uniformity */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 20px;
 }
 
 .card img {
