@@ -28,8 +28,8 @@
     transition: all 0.2s ease-in-out;
 }
 .floating-home-btn:hover{
-    background: #34b9f2;
-    color: #0f172a;
+    background: #2ea5d8;
+    color: #0e162a;
     transform: scale(1.1);
 }
 
@@ -42,9 +42,9 @@ align-items: flex-end;
 justify-content: center;
 font-size: 1rem;
 font-weight: bolder;
-background-color: #16213d;
+background-color: #0e97d6;
 margin-bottom: 10px;
-color: #0d3fd7;
+color: #0f172a;
 padding: 10px 20px;
 border: 2px solid #0f172a;
 border-radius: 5px;
@@ -53,7 +53,7 @@ text-decoration: none;
 }
 
 .btns:hover{
-    background: #0ea5e9;
+    background: #203a7c;
     color: #0f172a;
     transform: scale(1.1);
 }
@@ -68,7 +68,7 @@ text-decoration: none;
 
 body {
     /* Set this to match your exact homepage styling */
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #f8fafc;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
@@ -112,7 +112,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #38bdf8;
+    background: #33ade1;
     color: #0f172a;
     padding: 0.8rem 1.8rem;
     border-radius: 8px;
@@ -134,7 +134,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 2rem;
     text-align: center;
-    color: #38bdf8;
+    color: #32b2e8;
     margin-bottom: 3rem;
 }
 
@@ -250,6 +250,7 @@ contact*/
     padding: 40px;
     align-items: center;
     margin-top: 60px;
+    
 }
 /*space between the form and contact*/
 .contact-container{
@@ -262,7 +263,7 @@ gap: 0px;
 .contact-method {
     display: flex;
     gap: 40px;
-    margin-top: 30px;
+    margin-top: 30px; 
 }
 
 .email-btn {
@@ -278,7 +279,7 @@ gap: 0px;
     width: auto;
     display: inline-flex;
     flex-direction: column;
-    color: #25d366;
+     
     background-color: #16213d;
     margin-left: 5px;
 }
@@ -302,6 +303,7 @@ font-size: 40px;
     flex-direction: column;
     align-items:center ;
     text-align: center;
+    
 }
 /*icon stylig*/
 .method-item i {
@@ -311,9 +313,9 @@ font-size: 40px;
 }
 
 /*brand colors*/
-.fa-whatsapp { color: #25d366;}
+.fa-whatsapp { color: #26de69;}
 
-.fa-phone-alt {color: #3b70d3;}
+.fa-phone-alt {color: #3579f7;}
 
 
 /* ==========================================
