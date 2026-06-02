@@ -1,0 +1,375 @@
+/* ==========================================
+   1. GLOBAL STYLES & BACKGROUND
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.floating-home-btn {
+    position: fixed;
+    top: 0px;
+    left: 20px;
+    margin-bottom: 4px;
+    width: 45px;
+    height: 45px;
+    background: rgba(30, 41, 59,0.7 );
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    box-shadow: 0, 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease-in-out;
+}
+.floating-home-btn:hover{
+    background: #34b9f2;
+    color: #0f172a;
+    transform: scale(1.1);
+}
+
+.btns{
+box-sizing: border-box;
+display: inline-block;
+margin-bottom: 10px;
+flex-direction: column;
+align-items: flex-end;
+justify-content: center;
+font-size: 1rem;
+font-weight: bolder;
+background-color: #16213d;
+margin-bottom: 10px;
+color: #0d3fd7;
+padding: 10px 20px;
+border: 2px solid #0f172a;
+border-radius: 5px;
+box-shadow: 0 5px 5px rgba(20, 35, 65, 0.5);
+text-decoration: none;
+}
+
+.btns:hover{
+    background: #0ea5e9;
+    color: #0f172a;
+    transform: scale(1.1);
+}
+
+.btns-container{
+ display: flex;
+ justify-content: flex-end;   
+ width: 100%;
+ box-sizing: border-box;
+
+}
+
+body {
+    /* Set this to match your exact homepage styling */
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+    overflow-x: hidden;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #38bdf8, transparent);
+    margin: 4rem auto;
+    max-width: 80%;
+}
+
+/* ==========================================
+   2. HERO SECTION & PDF BUTTON
+   ========================================== */
+.about-hero {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #38bdf8;
+    margin-bottom: 1.5rem;
+}
+
+.about-hero p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    margin-bottom: 2rem;
+}
+
+/* Elegant PDF Button styling */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #38bdf8;
+    color: #0f172a;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.download-btn:hover {
+    background: #0ea5e9;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   3. TEAM SECTION (Responsive Grid)
+   ========================================== */
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #38bdf8;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: column; /* Mobile stack */
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column; /* Centered layout for mobile */
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.pfp-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #38bdf8;
+    flex-shrink: 0;
+}
+
+.team-pfp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.member-info .role {
+    display: block;
+    color: #38bdf8;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.member-info p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   4. MACHINERY FLEET GALLERY
+   ========================================== */
+.machinery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile default */
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.machine-card {
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s;
+}
+
+.machine-card:hover {
+    transform: translateY(-5px);
+}
+
+.machine-img-container {
+    width: 100%;
+    height: 220px;
+}
+
+.machine-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.machine-details {
+    padding: 1.5rem;
+}
+
+.machine-details h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #f8fafc;
+    margin-bottom: 0.5rem;
+}
+
+.machine-details p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+contact*/
+.contact {
+    padding: 40px;
+    align-items: center;
+    margin-top: 60px;
+}
+/*space between the form and contact*/
+.contact-container{
+    display: flex;
+justify-content: space-between;
+gap: 0px;
+}
+
+/*this alligns whatsapp*/
+.contact-method {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.email-btn {
+    align-items:center;
+    height: auto;
+    align-self: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: auto;
+    display: inline-flex;
+    flex-direction: column;
+    color: #25d366;
+    background-color: #16213d;
+    margin-left: 5px;
+}
+
+.email-btn:hover{
+    color: #1e77d7;
+}
+
+.fa-envelope{
+    color: #296ebd;
+}
+
+/*size of the email icon*/
+.email-btn i {
+font-size: 40px;
+}
+
+/*stacks icon ontop text*/
+.method-item {
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    text-align: center;
+}
+/*icon stylig*/
+.method-item i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/*brand colors*/
+.fa-whatsapp { color: #25d366;}
+
+.fa-phone-alt {color: #3b70d3;}
+
+
+/* ==========================================
+   5. DESKTOP / PC MEDIA QUERIES (min-width: 768px)
+   ========================================== */
+@media (min-width: 768px) {
+    .about-hero h1 { font-size: 3.5rem; }
+    
+    /* Team switches to side-by-side split row layout */
+    .team-card {
+        flex-direction: row; 
+        text-align: left;
+        padding: 2rem;
+    }
+    
+    .pfp-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Machinery switches to a clean multi-column layout grid */
+    .machinery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================
+   6. LOAD-IN ANIMATIONS
+   ========================================== */
+.animate-fade {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+.slide-left {
+    animation: slideLeft 1s ease-out forwards;
+    opacity: 0;
+}
+.slide-right {
+    animation: slideRight 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(-60px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+    from { transform: translateX(60px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+

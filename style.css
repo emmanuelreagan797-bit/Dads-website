@@ -138,7 +138,7 @@ nav a{
 }
 
 .card {
-    background:rgb(235, 233, 233) ;
+    background: rgb(242, 242, 242);
     padding: 15px;
     border-radius: 10px;
     width: 290px; /*fixed width to maintain uniformity */
@@ -152,7 +152,7 @@ nav a{
     max-height: 250px;
     object-fit: contain;
     border-radius: 8px 8px 0 0;
-    display: block;
+    display: block; 
 }
 
 /*about*/
@@ -242,11 +242,11 @@ gap: 20px;
 }
 
 .email-btn :hover{
-    color: #0a1df5;
+    color: #1e77d7;
 }
 
 .fa-envelope{
-    color: #061af3;
+    color: #296ebd;
 }
 
 /*size of the email icon*/
