@@ -126,7 +126,7 @@ nav a{
     display: flex;
     gap: 45px;
     margin-top:20px ;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 
 }
 
