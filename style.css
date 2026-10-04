@@ -163,7 +163,7 @@ nav a{
     gap: 30px;
 padding: 10px 0px;
 margin-top: 30px;
- background: #e0eaf8;
+ background: #c4deef;
 }
 
 
@@ -208,41 +208,41 @@ transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
 
 /*contact*/
 .contact {
-    padding: 40px;
+    padding: 20px;
     align-items: center;
 }
 /*space between the form and contact*/
 .contact-container{
     display: flex;
 justify-content: space-between;
-gap: 20px;
+gap: 45px;
 }
 
 /*this alligns whatsapp*/
 .contact-method {
     display: flex;
-    gap: 40px;
-    margin-top: 30px;
+    gap: 18px;
+    margin-top: 25px; /*change this to brig the icons lower but check how it looks on mobile*/
 }
 
 .email-btn {
     align-items:center;
     height: auto;
-    gap: 2px;
+    gap:3px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 10px;
     box-sizing: border-box;
     max-width: 190px;
     display: inline-flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 3px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 1px;
 }
 
 .email-btn :hover{
-    color: #1e77d7;
+    color: #6c6e70;
 }
 
 .fa-envelope{
